@@ -10,8 +10,6 @@ const applyDiscount$5 = (products) => {
 };
 
 const MoreThen3ItemDiscount$5 = (products) => {
-  // console.log('MoreThen3ItemDiscount5', products);
-
   const finalProduct = [];
   const temp = [];
 
@@ -27,8 +25,6 @@ const MoreThen3ItemDiscount$5 = (products) => {
     }
   });
   finalProduct.push(...temp);
-
-  console.log(finalProduct);
 
   return finalProduct;
 };

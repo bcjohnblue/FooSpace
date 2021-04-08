@@ -5,20 +5,16 @@ const getIsProductExist = (product) => product && product.name;
 
 const normalize = (productIDs) => {
   const selectedProducts = [];
-  const productCounts = {};
 
   productIDs.forEach((productID, index) => {
-    productCounts[productID] = productCounts[productID]
-      ? productCounts[productID] + 1
-      : 1;
+    const product = products[productID];
 
-    const isProductExist = getIsProductExist(products[productID]);
+    const isProductExist = getIsProductExist(product);
     if (isProductExist) {
       selectedProducts.push({
         id: index + 1,
         productID,
-        ...products[productID],
-        count: productCounts[productID]
+        ...product
       });
     }
   });
